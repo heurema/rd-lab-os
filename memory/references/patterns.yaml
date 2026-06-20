@@ -1,0 +1,31 @@
+patterns:
+  - id: scope_first_answer_last
+    name: Scope first, answer last
+    description: Establish decision context, boundaries, and success criteria before research.
+  - id: question_graph
+    name: Question graph, not query list
+    description: Decompose the topic into root question, branches, controversies, evidence gaps, and follow-up searches.
+  - id: evidence_first_synthesis
+    name: Evidence-first synthesis
+    description: Populate claim-level evidence rows before writing synthesis or final recommendations.
+  - id: collector_synthesizer_split
+    name: Separate collectors from synthesizers
+    description: Source collection and synthesis should be distinct roles/artifacts.
+  - id: adversarial_critic
+    name: Independent critic pass
+    description: Review unsupported claims, weak sources, stale evidence, and missing counterarguments separately from writing.
+  - id: durable_memory
+    name: Durable external memory
+    description: Promote reusable claims, references, patterns, and decisions into repository memory, not chat history.
+  - id: provenance_modes
+    name: Provenance modes
+    description: Label academic, official, repo, benchmark, market, social, expert, and internal sources separately.
+  - id: evaluation_loop
+    name: Evaluation loop
+    description: Score coverage, source quality, citation accuracy, contradiction handling, actionability, and reproducibility.
+  - id: skills_as_workflows
+    name: Skills as workflow packages
+    description: Encode reusable process knowledge in skill packages with focused instructions and optional scripts.
+  - id: social_signal_layer
+    name: Separate social/recency layer
+    description: Use social signals for attention and market research, not as standalone technical truth evidence.

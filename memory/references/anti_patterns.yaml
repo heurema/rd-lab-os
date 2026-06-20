@@ -1,0 +1,31 @@
+anti_patterns:
+  - id: giant_prompt
+    name: One giant system prompt
+    avoid_because: It destroys modularity and makes context loading inefficient.
+  - id: report_first
+    name: Report-first, evidence-later
+    avoid_because: It produces polished prose with weak traceability.
+  - id: search_equals_research
+    name: Treating deep research as better search
+    avoid_because: Research also requires integration, contradiction handling, and decision synthesis.
+  - id: flat_query
+    name: Flattening decomposition into one query
+    avoid_because: It misses branches, stakeholders, and controversies.
+  - id: vibe_eval
+    name: Evaluating via vibes
+    avoid_because: Good writing can hide weak evidence.
+  - id: unlabeled_provenance
+    name: Ignoring provenance mode
+    avoid_because: Social, academic, official, and internal evidence support different claim types.
+  - id: chat_memory
+    name: Chat memory as research memory
+    avoid_because: It is not durable, queryable, or auditable enough.
+  - id: premature_backend
+    name: Custom multi-agent backend too early
+    avoid_because: It adds infrastructure before the workflow is validated.
+  - id: premature_graphrag
+    name: GraphRAG before evidence quality
+    avoid_because: It can preserve and amplify bad claims.
+  - id: reference_dependency_confusion
+    name: Confusing references with dependencies
+    avoid_because: Studying a system does not mean installing or building on it.

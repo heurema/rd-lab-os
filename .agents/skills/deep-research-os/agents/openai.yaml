@@ -1,0 +1,6 @@
+interface:
+  display_name: "Deep Research OS"
+  short_description: "Create evidence-ledger-first deep research runs with critic passes and final memos."
+  default_prompt: "Use $deep-research-os to create or update a structured R&D Lab OS research run."
+policy:
+  allow_implicit_invocation: true

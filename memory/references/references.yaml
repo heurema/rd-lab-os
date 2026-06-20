@@ -1,0 +1,245 @@
+# Seed Reference Atlas for R&D Lab OS
+# Treat these as references to study, not dependencies to install.
+
+- id: storm
+  name: STORM / Co-STORM
+  category: general_deep_research
+  type: repo_paper
+  url: https://github.com/stanford-oval/storm
+  priority: must_study
+  mvp_fit: immediate
+  what_to_steal: [perspective_expansion, outline_first_synthesis, human_in_the_loop_curation]
+
+- id: gpt_researcher
+  name: GPT Researcher
+  category: general_deep_research
+  type: repo
+  url: https://github.com/assafelovic/gpt-researcher
+  priority: must_study
+  mvp_fit: immediate
+  what_to_steal: [planner_executor_publisher, parallel_research_agents, cited_reports]
+
+- id: open_deep_research
+  name: LangChain Open Deep Research
+  category: general_deep_research
+  type: repo
+  url: https://github.com/langchain-ai/open_deep_research
+  priority: must_study
+  mvp_fit: immediate
+  what_to_steal: [model_provider_abstraction, search_abstraction, mcp_aware_workflow]
+
+- id: mindsearch
+  name: MindSearch
+  category: general_deep_research
+  type: repo_paper
+  url: https://github.com/InternLM/MindSearch
+  priority: must_study
+  mvp_fit: immediate
+  what_to_steal: [question_graph, planner_searcher_split, hierarchical_retrieval]
+
+- id: paperqa2
+  name: PaperQA2
+  category: scientific_literature
+  type: repo_paper
+  url: https://github.com/Future-House/paper-qa
+  priority: must_study
+  mvp_fit: immediate
+  what_to_steal: [evidence_first_rag, citation_discipline, contradiction_detection]
+
+- id: openscholar
+  name: OpenScholar
+  category: scientific_literature
+  type: paper_repo
+  url: verify_primary_source
+  priority: must_study
+  mvp_fit: immediate
+  what_to_steal: [literature_scale_retrieval, citation_backed_synthesis, retriever_reranker_generator]
+
+- id: ai2_scholarqa
+  name: Ai2 ScholarQA
+  category: scientific_literature
+  type: product_repo_blog
+  url: verify_primary_source
+  priority: must_study
+  mvp_fit: immediate
+  what_to_steal: [quote_extraction, planning_clustering, section_writing]
+
+- id: autosurvey
+  name: AutoSurvey
+  category: survey_generation
+  type: paper_repo
+  url: https://arxiv.org/abs/2406.10252
+  priority: useful
+  mvp_fit: later
+  what_to_steal: [retrieval_outline_parallel_drafting, integration_refinement]
+
+- id: surveyx
+  name: SurveyX
+  category: survey_generation
+  type: paper_repo
+  url: https://arxiv.org/abs/2502.14776
+  priority: useful
+  mvp_fit: later
+  what_to_steal: [preparation_phase, attribute_tree, repolish_pass]
+
+- id: surveyforge
+  name: SurveyForge
+  category: survey_generation
+  type: paper_repo
+  url: https://arxiv.org/abs/2503.04629
+  priority: useful
+  mvp_fit: later
+  what_to_steal: [outline_mining, memory_driven_generation, surveybench_style_eval]
+
+- id: researchagent
+  name: ResearchAgent
+  category: idea_generation
+  type: paper
+  url: https://arxiv.org/abs/2404.07738
+  priority: useful
+  mvp_fit: later
+  what_to_steal: [idea_method_experiment_loop, reviewing_agents, academic_graph]
+
+- id: novel_research_ideas
+  name: Can LLMs Generate Novel Research Ideas?
+  category: idea_generation
+  type: paper
+  url: verify_primary_source
+  priority: must_study
+  mvp_fit: immediate
+  what_to_steal: [novelty_feasibility_rubric, human_expert_comparison]
+
+- id: ai_coscientist
+  name: AI Co-Scientist
+  category: idea_generation
+  type: paper_product_blog
+  url: https://arxiv.org/abs/2502.18864
+  priority: useful
+  mvp_fit: later
+  what_to_steal: [generate_debate_evolve, hypothesis_tournament]
+
+- id: sciagents
+  name: SciAgents
+  category: idea_generation
+  type: paper
+  url: https://arxiv.org/abs/2409.05556
+  priority: useful
+  mvp_fit: later
+  what_to_steal: [knowledge_graph_idea_mining, interdisciplinary_link_discovery]
+
+- id: agent_laboratory
+  name: Agent Laboratory
+  category: autonomous_science
+  type: repo_paper
+  url: https://github.com/SamuelSchmidgall/AgentLaboratory
+  priority: useful
+  mvp_fit: later
+  what_to_steal: [literature_experiment_report_phases, role_based_workflow]
+
+- id: ai_scientist
+  name: The AI Scientist
+  category: autonomous_science
+  type: repo_paper
+  url: https://github.com/SakanaAI/AI-Scientist
+  priority: conceptual
+  mvp_fit: later
+  what_to_steal: [full_research_lifecycle, automated_reviewer, experiment_manager]
+
+- id: graphrag
+  name: Microsoft GraphRAG
+  category: memory
+  type: repo_docs
+  url: https://github.com/microsoft/graphrag
+  priority: must_study
+  mvp_fit: immediate_reference_later_dependency
+  what_to_steal: [persistent_graph_memory, community_summaries, global_local_search]
+
+- id: agentrxiv
+  name: AgentRxiv
+  category: memory
+  type: repo_paper_site
+  url: verify_primary_source
+  priority: useful
+  mvp_fit: later
+  what_to_steal: [cross_run_memory, cumulative_research]
+
+- id: deepresearch_bench
+  name: DeepResearch Bench
+  category: evaluation
+  type: benchmark
+  url: https://arxiv.org/abs/2506.11763
+  priority: must_study
+  mvp_fit: immediate
+  what_to_steal: [report_quality_eval, citation_accuracy, phd_level_tasks]
+
+- id: browsecomp
+  name: BrowseComp
+  category: evaluation
+  type: benchmark
+  url: https://openai.com/index/browsecomp/
+  priority: must_study
+  mvp_fit: immediate
+  what_to_steal: [hard_to_find_fact_retrieval, browsing_persistence]
+
+- id: gaia
+  name: GAIA
+  category: evaluation
+  type: benchmark
+  url: https://arxiv.org/abs/2311.12983
+  priority: useful
+  mvp_fit: immediate
+  what_to_steal: [tool_use_multimodal_reasoning_eval]
+
+- id: deepresearchgym
+  name: DeepResearchGym
+  category: evaluation
+  type: benchmark
+  url: https://arxiv.org/abs/2505.19253
+  priority: useful
+  mvp_fit: later
+  what_to_steal: [reproducible_search_environment, controlled_eval]
+
+- id: deepscholar_bench
+  name: DeepScholar-Bench
+  category: evaluation
+  type: benchmark
+  url: verify_primary_source
+  priority: must_study
+  mvp_fit: immediate
+  what_to_steal: [related_work_generation_eval, synthesis_verifiability]
+
+- id: codex_skills
+  name: Codex Agent Skills
+  category: workflow_packaging
+  type: official_docs
+  url: https://developers.openai.com/codex/skills
+  priority: must_study
+  mvp_fit: immediate
+  what_to_steal: [skill_md, progressive_disclosure, repo_scoped_workflows]
+
+- id: claude_code_skills
+  name: Claude Code Skills
+  category: workflow_packaging
+  type: official_docs
+  url: verify_primary_source
+  priority: useful
+  mvp_fit: later
+  what_to_steal: [critic_workflows, project_scoped_skills]
+
+- id: gemini_cli_skills
+  name: Gemini CLI Agent Skills
+  category: workflow_packaging
+  type: official_docs
+  url: verify_primary_source
+  priority: useful
+  mvp_fit: later
+  what_to_steal: [long_context_scanning, cross_tool_skill_portability]
+
+- id: last30days_skill
+  name: last30days-skill
+  category: social_recency
+  type: community_skill
+  url: https://github.com/mvanhorn/last30days-skill
+  priority: useful
+  mvp_fit: immediate
+  what_to_steal: [social_signal_ingestion, attention_weighted_ranking, recency_briefs]
