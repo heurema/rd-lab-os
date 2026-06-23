@@ -1,0 +1,16 @@
+[project]
+name = ""
+type = "unknown"
+description = ""
+lab_root = ".heurema/rdlab"
+
+[workflow]
+default_run_profile = "project_lab"
+memory_policy = "promote_verified_only"
+idea_generation = true
+change_tracking = true
+
+[quality]
+require_evidence_ledger = true
+require_source_modes = true
+require_critic_review = true

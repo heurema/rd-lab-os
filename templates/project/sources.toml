@@ -1,0 +1,47 @@
+[[sources]]
+id = "project-readme"
+type = "local_file"
+path = "README.md"
+watch = true
+mode = "internal_doc"
+trust = "A"
+
+[[sources]]
+id = "upstream-repo"
+type = "github_repo"
+url = "https://github.com/example/example"
+watch = true
+mode = "code_repo"
+trust = "A"
+
+[[sources]]
+id = "project-site"
+type = "url"
+url = "https://example.com"
+watch = true
+mode = "official_docs"
+trust = "B"
+
+[[sources]]
+id = "project-feed"
+type = "rss"
+url = "https://example.com/feed.xml"
+watch = false
+mode = "market_news"
+trust = "C"
+
+[[sources]]
+id = "arxiv-query"
+type = "arxiv_query"
+query = "cat:cs.AI"
+watch = false
+mode = "academic"
+trust = "B"
+
+[[sources]]
+id = "social-recency"
+type = "social_signal"
+query = "example project"
+watch = false
+mode = "social_signal"
+trust = "C"

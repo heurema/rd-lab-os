@@ -2,7 +2,7 @@
 
 ## Mission
 
-Build and operate a reproducible deep-research workflow using existing AI agents, not custom model training.
+Build and operate a reproducible, portable deep-research workflow using existing AI agents, not custom model training.
 
 ## Default behavior
 
@@ -14,12 +14,23 @@ When asked to do research in this repo:
 4. Add claims to `03_evidence_ledger.csv` before synthesizing.
 5. Run `scripts/validate_run.py` before declaring the run complete.
 
+When asked to attach the lab to another project:
+
+1. Use `.heurema/rdlab/` as the canonical project-local lab path.
+2. Do not create `.rdlab/`.
+3. Run `scripts/init_project.py <project-root>` if the project lab does not exist.
+4. Read `.heurema/rdlab/rdlab.toml`, `sources.toml`, and `topics.toml` when present.
+5. Create or update runs under `.heurema/rdlab/runs/YYYY-MM-DD-topic/`.
+6. Use `scripts/new_run.py "<topic>" --project-root <project-root>` for project-local runs.
+7. Run `scripts/validate_project.py <project-root>` and `scripts/validate_run.py <run-folder>` before declaring the project-local workflow valid.
+
 ## Non-goals
 
 - No model training.
 - No custom multi-agent backend in v0.
 - No UI before the artifact workflow works.
 - No unlabelled blending of social, market, academic, official, and internal sources.
+- No top-level `.rdlab/` directory.
 
 ## Quality bar
 
@@ -31,3 +42,5 @@ A research run is valid only if:
 - Contradictions and uncertainty are preserved.
 - The critic pass is separate from synthesis.
 - Recommendations trace back to evidence.
+
+The evidence ledger remains the source of truth in both repo-local and project-local mode. Final memos are derivative artifacts.

@@ -8,6 +8,12 @@ The evidence ledger is the source of truth for the final memo.
 id,claim,source_title,source_url,source_mode,source_type,date,author_org,evidence_quote_or_paraphrase,confidence,conflicts,notes,used_in_final
 ```
 
+Project-local ledgers may add optional columns:
+
+```csv
+topic_id,source_id,change_id
+```
+
 ## Confidence values
 
 - high

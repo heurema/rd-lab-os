@@ -23,8 +23,17 @@ Codex is the builder and normalizer for the lab. It should:
 
 ## Default first move for any research task
 
+Repo-local task:
+
 ```bash
 python3 scripts/new_run.py "<topic>"
+```
+
+Project-local task:
+
+```bash
+python3 scripts/init_project.py <project-root>
+python3 scripts/new_run.py "<topic>" --project-root <project-root>
 ```
 
 Then fill:
@@ -34,3 +43,5 @@ Then fill:
 3. `02_source_map.md`
 
 Only after those exist should the evidence ledger and synthesis begin.
+
+For project-local work, use `.heurema/rdlab/` as the canonical path. Do not create `.rdlab/`.

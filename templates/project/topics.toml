@@ -1,0 +1,6 @@
+[[topics]]
+id = "default"
+title = "Default project research topic"
+priority = "medium"
+freshness = "weekly"
+status = "active"
