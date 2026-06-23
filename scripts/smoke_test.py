@@ -6,6 +6,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import json
 from pathlib import Path
 
 
@@ -61,6 +62,14 @@ path = "README.md"
 watch = true
 mode = "internal_doc"
 trust = "A"
+
+[[sources]]
+id = "skip-me"
+type = "local_file"
+path = "missing.md"
+watch = false
+mode = "internal_doc"
+trust = "A"
 """,
             encoding="utf-8",
         )
@@ -88,6 +97,10 @@ trust = "A"
         diff = newest_json(lab / "watch" / "diffs")
         if not snapshot.exists() or not diff.exists():
             raise SystemExit("Expected snapshot and diff files to exist")
+        snapshot_data = json.loads(snapshot.read_text(encoding="utf-8"))
+        checked_ids = {source["id"] for source in snapshot_data["sources"]}
+        if "skip-me" in checked_ids:
+            raise SystemExit("snapshot_sources.py should skip sources with watch = false")
 
         toolkit_copy = tmp_root / "toolkit-copy"
         toolkit_copy.mkdir()

@@ -125,10 +125,11 @@ template-only Markdown files as completed content.
 python3 /path/to/rd-lab-os/scripts/snapshot_sources.py /path/to/project
 ```
 
-The snapshot script reads `.heurema/rdlab/sources.toml`, supports `local_file`
-and `url` sources, computes SHA256 hashes, writes timestamped JSON snapshots,
-and writes a simple diff summary. It is not a crawler and does not perform
-semantic diffing.
+The snapshot script reads `.heurema/rdlab/sources.toml`, checks entries where
+`watch = true`, supports `local_file` and `url` sources, computes SHA256 hashes,
+writes timestamped JSON snapshots, and writes a simple diff summary. It skips
+entries with `watch = false`. It is not a crawler and does not perform semantic
+diffing.
 
 ## Ideas, Experiments, And Memory
 

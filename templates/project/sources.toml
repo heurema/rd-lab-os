@@ -10,7 +10,7 @@ trust = "A"
 id = "upstream-repo"
 type = "github_repo"
 url = "https://github.com/example/example"
-watch = true
+watch = false
 mode = "code_repo"
 trust = "A"
 

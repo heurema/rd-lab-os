@@ -34,6 +34,10 @@ def source_location(source: dict[str, Any]) -> str:
     return str(source.get("url") or source.get("path") or source.get("query") or "")
 
 
+def should_watch(source: dict[str, Any]) -> bool:
+    return source.get("watch", True) is not False
+
+
 def check_local_file(project_root: Path, source: dict[str, Any]) -> dict[str, Any]:
     location = source_location(source)
     path = (project_root / location).resolve()
@@ -127,9 +131,13 @@ def main() -> None:
     previous = latest_previous_snapshot(snapshot_dir)
     timestamp = utc_timestamp()
     checked: list[dict[str, Any]] = []
+    skipped = 0
 
     for index, source in enumerate(sources, start=1):
         if not isinstance(source, dict):
+            continue
+        if not should_watch(source):
+            skipped += 1
             continue
         source_id = str(source.get("id") or f"source-{index}")
         source_type = str(source.get("type") or "unknown")
@@ -153,6 +161,7 @@ def main() -> None:
         "timestamp": timestamp,
         "project": project_root.name,
         "sources_checked": len(checked),
+        "sources_skipped": skipped,
         "sources": checked,
     }
     diff = {"timestamp": timestamp, **compare_snapshots(previous, checked)}

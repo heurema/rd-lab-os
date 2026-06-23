@@ -9,7 +9,8 @@ Canonical path:
 ```
 
 Use it for project research configuration, topic tracking, source snapshots,
-research runs, decisions, ideas, experiments, and promoted memory.
+research runs, decisions, ideas, experiments, and promoted memory. Source
+snapshots check entries in `sources.toml` where `watch = true`.
 
 Do not create `.rdlab/`. Heurema project tooling should stay under the single
 `.heurema/` namespace.
