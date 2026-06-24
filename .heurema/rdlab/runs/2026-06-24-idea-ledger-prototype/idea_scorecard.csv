@@ -1,0 +1,7 @@
+idea_id,feasibility,impact,evidence_strength,scope_risk,verdict,reason
+I1,high,high,medium,low,KEEP,"Best next artifact test; compatible with CSV-first workflow."
+I2,medium,high,medium,medium,KEEP_BUT_GATE,"Useful but should wait for repeated manual debate friction."
+I3,high,medium,medium,medium,MODIFY,"Test score fields inside the ledger before creating a separate scorecard artifact."
+I4,medium,medium,low,medium,DEFER,"Needs at least three idea runs before reporting is useful."
+I5,medium,medium,low,medium,DEFER,"Needs a second snapshot and manual brief before scripting."
+I6,low,medium,low,high,STOP,"Transcript parsing risks brittle ingestion and weak evidence discipline."

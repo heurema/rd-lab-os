@@ -8,7 +8,7 @@ from pathlib import Path
 
 
 LAB_RELATIVE = Path(".heurema") / "rdlab"
-PROJECT_TEMPLATE_FILES = ["rdlab.toml", "sources.toml", "topics.toml", "README.md"]
+PROJECT_TEMPLATE_FILES = ["rdlab.toml", "sources.toml", "topics.toml", "providers.toml", "README.md"]
 DIRECTORIES = [
     "runs",
     "memory",

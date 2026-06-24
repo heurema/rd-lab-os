@@ -1,0 +1,27 @@
+[[topics]]
+id = "idea-discovery"
+title = "Find, discuss, and triage R&D Lab OS product ideas"
+priority = "high"
+freshness = "weekly"
+status = "active"
+
+[[topics]]
+id = "provider-debate"
+title = "Use subscription providers for independent critique and idea debate"
+priority = "high"
+freshness = "weekly"
+status = "active"
+
+[[topics]]
+id = "portable-lab-product"
+title = "Turn the portable project lab into a practical product workflow"
+priority = "medium"
+freshness = "weekly"
+status = "active"
+
+[[topics]]
+id = "source-watching"
+title = "Convert source snapshots into change briefs and follow-up runs"
+priority = "medium"
+freshness = "weekly"
+status = "active"

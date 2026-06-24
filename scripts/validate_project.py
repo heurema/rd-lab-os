@@ -9,6 +9,7 @@ from pathlib import Path
 
 LAB_RELATIVE = Path(".heurema") / "rdlab"
 CONFIG_FILES = ["rdlab.toml", "sources.toml", "topics.toml"]
+OPTIONAL_CONFIG_FILES = ["providers.toml"]
 REQUIRED_DIRS = ["runs", "memory", "watch", "ideas", "experiments", "decisions"]
 
 
@@ -34,6 +35,16 @@ def main() -> None:
         path = lab / name
         if not path.exists():
             errors.append(f"missing config: {name}")
+            continue
+        try:
+            with path.open("rb") as f:
+                tomllib.load(f)
+        except tomllib.TOMLDecodeError as exc:
+            errors.append(f"invalid TOML in {name}: {exc}")
+
+    for name in OPTIONAL_CONFIG_FILES:
+        path = lab / name
+        if not path.exists():
             continue
         try:
             with path.open("rb") as f:

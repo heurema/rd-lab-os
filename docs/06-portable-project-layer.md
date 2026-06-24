@@ -36,6 +36,7 @@ many repositories.
       rdlab.toml
       sources.toml
       topics.toml
+      providers.toml
       runs/
       memory/
       watch/
@@ -46,7 +47,8 @@ many repositories.
 
 `rdlab.toml` defines project-level lab settings. `sources.toml` lists sources
 that can be used or watched. `topics.toml` is the project research topic
-registry.
+registry. `providers.toml` defines subscription-backed CLI providers for
+research, synthesis, critic, and implementation passes.
 
 ## Repo Core vs Project Lab
 
@@ -102,6 +104,42 @@ Project-local mode defaults to the `project_lab` profile and writes under:
 <project>/.heurema/rdlab/runs/YYYY-MM-DD-topic/
 ```
 
+Before synthesis, project-local runs should complete an external source pass
+unless the run is deliberately internal-only. The reason for an internal-only
+run must be written in `02_source_map.md`, `06_synthesis.md`, and
+`09_critic_review.md`.
+
+The critic review should record independent critique. Prefer a separate
+provider or agent when available. If the same agent performs all passes, record
+that limitation explicitly instead of presenting it as provider debate.
+
+## Subscription Provider Router
+
+Project labs can use a simple subscription-only provider router:
+
+```bash
+python3 /path/to/rd-lab-os/scripts/provider_router.py list --project-root /path/to/project
+python3 /path/to/rd-lab-os/scripts/provider_router.py doctor --project-root /path/to/project
+python3 /path/to/rd-lab-os/scripts/provider_router.py doctor --project-root /path/to/project --probe
+```
+
+The router reads `.heurema/rdlab/providers.toml`. It does not store secrets and
+does not use API-key provider flows. It shells out to configured local CLI tools
+such as Claude Code, Vibe, Agy, Codex, or Gemini when those tools are explicitly
+enabled in `providers.toml`.
+
+Use routing commands to separate synthesis and critic providers:
+
+```bash
+python3 /path/to/rd-lab-os/scripts/provider_router.py route --project-root /path/to/project --task synthesis
+python3 /path/to/rd-lab-os/scripts/provider_router.py route --project-root /path/to/project --task critic --exclude-provider anthropic
+```
+
+Provider availability is machine- and account-specific. A configured provider
+is not considered healthy until `doctor --probe` succeeds. If a provider is
+blocked by login, region, token refresh, or account eligibility, record that in
+`09_critic_review.md` instead of claiming a multi-provider debate happened.
+
 ## Validate
 
 Validate a project-local lab:
@@ -138,6 +176,25 @@ Project-lab runs include:
 - `07_ideas.md` for candidate ideas and rejected ideas;
 - `08_experiments.md` for hypothesis and experiment planning;
 - `12_memory_update.md` for explicit memory promotion decisions.
+
+For idea-heavy runs, optionally copy:
+
+```text
+templates/idea_ledger/idea_ledger_v2.csv
+```
+
+See `docs/07-idea-ledger.md` for status vocabulary and update rules.
+
+Run-local idea ledgers can be validated with:
+
+```bash
+python3 /path/to/rd-lab-os/scripts/validate_idea_ledger.py /path/to/project/.heurema/rdlab/runs/<run>/idea_ledger_v2_normalized.csv --strict
+```
+
+This validator is separate from `validate_ledger.py`. The evidence ledger
+validates claims and source support; the idea ledger validator checks idea
+status rules such as `status`, `allowed_statuses`, `update_policy`, and
+`status_update_reason`.
 
 Memory promotion should remain conservative. Promote verified, reusable claims,
 references, patterns, decisions, and benchmarks. Do not promote weak evidence as

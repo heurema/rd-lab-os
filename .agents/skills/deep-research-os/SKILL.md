@@ -21,8 +21,11 @@ Do not create `.rdlab/`. The canonical project-local lab path is `.heurema/rdlab
 - Scope first, answer last.
 - Evidence ledger first, final memo second.
 - Prefer primary sources when available.
+- Do an external source pass before synthesis unless the run is explicitly internal-only.
 - Separate evidence from interpretation.
 - Preserve contradictions and uncertainty.
+- Use independent critic perspectives when available. Prefer the subscription-only provider router when a project lab has `providers.toml`.
+- If only one agent/provider is used, or if a provider is blocked by auth, location, or token refresh, say so explicitly.
 - Do not hallucinate sources, papers, repos, dates, authors, benchmarks, or metrics.
 - Do not turn references into dependencies without explicit justification.
 - Use existing frontier-agent subscriptions and coding agents as workers; do not train models.
@@ -61,6 +64,21 @@ For each project-local `project_lab` run, create or update:
 12_memory_update.md
 ```
 
+For idea-heavy project-local runs, optionally add:
+
+```text
+idea_ledger_v2.csv
+```
+
+Start from `templates/idea_ledger/idea_ledger_v2.csv`, replace the example row,
+and validate it with:
+
+```bash
+python3 scripts/validate_idea_ledger.py <run-folder>/idea_ledger_v2.csv --strict
+```
+
+Do not require an idea ledger for ordinary research runs.
+
 ## Workflow
 
 1. Create a run folder with `scripts/new_run.py` unless one already exists.
@@ -69,15 +87,20 @@ For each project-local `project_lab` run, create or update:
 2. Fill `00_spec.md` with topic, decision context, scope, non-scope, success criteria, assumptions, and open questions.
 3. Fill `01_question_graph.md` with root question, sub-questions, perspectives, controversies, and evidence gaps.
 4. Build `02_source_map.md`; rank sources by source mode and trust level.
-5. Populate `03_evidence_ledger.csv` before writing conclusions.
-6. Preserve source conflicts, weak evidence, stale claims, missing primary sources, and open uncertainties.
-7. Write synthesis only from the evidence ledger and source map.
-8. Run an adversarial critic pass.
-9. Write the final memo as a decision-grade memo with traceability to the ledger.
-10. Update the decision log and memory files only if the run produces durable decisions or patterns.
+5. Run the external source pass named in `02_source_map.md`, or explicitly mark the run internal-only and explain the reason.
+6. Populate `03_evidence_ledger.csv` before writing conclusions.
+7. Preserve source conflicts, weak evidence, stale claims, missing primary sources, and open uncertainties.
+8. Write synthesis only from the evidence ledger and source map.
+9. Run an adversarial critic pass. Prefer another provider/agent when available; otherwise record the single-agent limitation.
+   - Project-local provider check: `python3 scripts/provider_router.py doctor --project-root <project-root> --probe`
+   - Example critic route: `python3 scripts/provider_router.py route --project-root <project-root> --task critic --exclude-provider anthropic`
+10. Write the final memo as a decision-grade memo with traceability to the ledger.
+11. Update the decision log and memory files only if the run produces durable decisions or patterns.
+12. For idea-heavy runs, keep idea status changes consistent with the row's `update_policy`.
 
 When operating on a project-local lab, read `.heurema/rdlab/rdlab.toml`,
-`.heurema/rdlab/sources.toml`, and `.heurema/rdlab/topics.toml` when present.
+`.heurema/rdlab/sources.toml`, `.heurema/rdlab/topics.toml`, and
+`.heurema/rdlab/providers.toml` when present.
 
 ## Source modes
 

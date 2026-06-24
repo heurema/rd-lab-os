@@ -1,0 +1,72 @@
+{
+  "project": "rd-lab-os",
+  "sources": [
+    {
+      "error": "",
+      "hash": "0a4085cf100f970c8e7e00ecd34b25423ff72273378e6079845e50ca1787c364",
+      "id": "project-readme",
+      "source_location": "README.md",
+      "source_type": "local_file",
+      "status": "ok"
+    },
+    {
+      "error": "",
+      "hash": "c4a61b04a3ab734efeacaf513932cb83da122fc575bbfe367c6e8486a7b6ce91",
+      "id": "agent-instructions",
+      "source_location": "AGENTS.md",
+      "source_type": "local_file",
+      "status": "ok"
+    },
+    {
+      "error": "",
+      "hash": "424ca2635fc40a67413a3ed2f9bd4e9a4ed438d048c3cdd4783f7e5076633f6c",
+      "id": "portable-project-layer-doc",
+      "source_location": "docs/06-portable-project-layer.md",
+      "source_type": "local_file",
+      "status": "ok"
+    },
+    {
+      "error": "",
+      "hash": "fb372ecd0ab788239173fe1688d57aa5c1f6aec67623c49b549ae224e4fa83b3",
+      "id": "provider-router-script",
+      "source_location": "scripts/provider_router.py",
+      "source_type": "local_file",
+      "status": "ok"
+    },
+    {
+      "error": "",
+      "hash": "98b61858c1ac4d094e01fd1362bc63cdd674f04c54283e204c713ea73134e17d",
+      "id": "project-lab-run-template",
+      "source_location": "templates/run_project_lab/07_ideas.md",
+      "source_type": "local_file",
+      "status": "ok"
+    },
+    {
+      "error": "",
+      "hash": "3e2c710dcf58bcf4b8540fffedb8bfd3d471d2b648c8e10e966ab4e486ebe62b",
+      "id": "project-lab-experiment-template",
+      "source_location": "templates/run_project_lab/08_experiments.md",
+      "source_type": "local_file",
+      "status": "ok"
+    },
+    {
+      "error": "",
+      "hash": "c00e2040ebf109879316f40b55d4d5b0e9dda4abd32944829d6b45c48594f391",
+      "id": "github-repo-readme",
+      "source_location": "https://raw.githubusercontent.com/heurema/rd-lab-os/main/README.md",
+      "source_type": "url",
+      "status": "ok"
+    },
+    {
+      "error": "",
+      "hash": "a61b8e4f405abb36592d32e75ce8ffff5a3ef9fee6269a3cceea561fa49c20c7",
+      "id": "openai-codex-skills-doc",
+      "source_location": "https://developers.openai.com/codex/skills",
+      "source_type": "url",
+      "status": "ok"
+    }
+  ],
+  "sources_checked": 8,
+  "sources_skipped": 1,
+  "timestamp": "20260624T051742518067Z"
+}

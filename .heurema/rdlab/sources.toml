@@ -1,0 +1,80 @@
+[[sources]]
+id = "project-readme"
+type = "local_file"
+path = "README.md"
+watch = true
+mode = "internal_doc"
+trust = "A"
+topics = ["idea-discovery", "portable-lab-product"]
+
+[[sources]]
+id = "agent-instructions"
+type = "local_file"
+path = "AGENTS.md"
+watch = true
+mode = "internal_doc"
+trust = "A"
+topics = ["idea-discovery", "provider-debate"]
+
+[[sources]]
+id = "portable-project-layer-doc"
+type = "local_file"
+path = "docs/06-portable-project-layer.md"
+watch = true
+mode = "internal_doc"
+trust = "A"
+topics = ["portable-lab-product", "idea-discovery"]
+
+[[sources]]
+id = "provider-router-script"
+type = "local_file"
+path = "scripts/provider_router.py"
+watch = true
+mode = "code_repo"
+trust = "A"
+topics = ["provider-debate", "idea-discovery"]
+
+[[sources]]
+id = "project-lab-run-template"
+type = "local_file"
+path = "templates/run_project_lab/07_ideas.md"
+watch = true
+mode = "internal_doc"
+trust = "A"
+topics = ["idea-discovery"]
+
+[[sources]]
+id = "project-lab-experiment-template"
+type = "local_file"
+path = "templates/run_project_lab/08_experiments.md"
+watch = true
+mode = "internal_doc"
+trust = "A"
+topics = ["idea-discovery"]
+
+[[sources]]
+id = "github-repo"
+type = "github_repo"
+url = "https://github.com/heurema/rd-lab-os"
+watch = false
+mode = "code_repo"
+trust = "A"
+topics = ["portable-lab-product", "provider-debate"]
+
+[[sources]]
+id = "github-repo-readme"
+type = "url"
+url = "https://raw.githubusercontent.com/heurema/rd-lab-os/main/README.md"
+watch = true
+mode = "code_repo"
+trust = "A"
+topics = ["portable-lab-product"]
+
+[[sources]]
+id = "openai-codex-skills-doc"
+type = "url"
+url = "https://developers.openai.com/codex/skills"
+watch = true
+mode = "official_docs"
+trust = "A"
+topics = ["provider-debate", "portable-lab-product"]

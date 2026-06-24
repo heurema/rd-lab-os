@@ -1,0 +1,2 @@
+idea_id,title,premise,evidence_rows,status,allowed_statuses,update_policy,next_test,main_risk,critic_verdict,status_update_reason
+IDEA-001,"Example idea","Replace this row with one real idea.","E1","candidate","candidate|candidate_validated_once|candidate_modified|deferred|deferred_until_repeated_manual_debate|stopped|promoted","Keep candidate unless evidence rows support a status change. Do not promote from provider preference alone.","Replace with the next smallest test.","Replace with the main risk.","UNREVIEWED","Template row; no status change has been made."
